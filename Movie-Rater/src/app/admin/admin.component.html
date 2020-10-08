@@ -9,7 +9,7 @@
 </div>
 
 <div class="row justify-content-around mt-5 ">
-  <div class="col-md-3" *ngFor="let movie of movieData" >
+  <div class="col-md-3" *ngFor="let movie of movies" >
     <div *ngIf="movie!==null" class="mt-4 card container" style="float: left;" (click)="navigateProduct(movie.id)">
      
       <div class='first'>

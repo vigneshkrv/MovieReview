@@ -12,20 +12,38 @@ export class HomeComponent implements OnInit {
   movieData
   searchValue=""
   faSearch = faSearch
+  searchResult=[]
+  movies
   constructor(private dataService: DataServiceService, private route:Router) { }
 
   ngOnInit() {
      this.dataService.getMovies().subscribe(k=>{
+        this.movies=k
         this.movieData=k
     })
   }
 
-  changeInput(){
-
+  searchMovies(){
+    if(this.searchValue!="")
+      {
+      this.searchResult=this.movieData.filter((x)=>{
+        if(x)
+        {
+          var temp= x.original_title.toLowerCase()
+          return temp.includes(this.searchValue.toLowerCase())
+        }
+       
+      })
+      
+      this.movies = this.searchResult
+    }
   }
 
-  searchMovies() {
-
+  changeInput() {
+    if(this.searchValue=="")
+    {
+      this.movies = this.movieData 
+    }
   }
 
   navigateProduct(x){

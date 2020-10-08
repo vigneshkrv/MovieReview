@@ -12,11 +12,14 @@ export class AdminComponent implements OnInit {
   movieData
   searchValue=""
   faSearch = faSearch
+  searchResult=[]
+  movies
   constructor(private dataService: DataServiceService, private route:Router) { }
 
   ngOnInit() {
      this.dataService.getMovies().subscribe(k=>{
         this.movieData=k
+        this.movies=k
     })
   }
   editMovie(x){
@@ -31,13 +34,29 @@ export class AdminComponent implements OnInit {
     })
   }
 
-  changeInput(){
-
+  searchMovies(){
+    if(this.searchValue!="")
+      {
+      this.searchResult=this.movieData.filter((x)=>{
+        if(x)
+        {
+          var temp= x.original_title.toLowerCase()
+          return temp.includes(this.searchValue.toLowerCase())
+        }
+       
+      })
+      
+      this.movies = this.searchResult
+    }
   }
 
-  searchMovies() {
-
+  changeInput() {
+    if(this.searchValue=="")
+    {
+      this.movies = this.movieData 
+    }
   }
+
 
   createMovies() {
     this.route.navigateByUrl("createMovie")
