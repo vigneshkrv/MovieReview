@@ -1,0 +1,53 @@
+<!-- <div class="row justify-content-end mr-3">
+  <Button class="btn btn-info" [routerLink]="'/allProducts'">All products</Button>
+</div> -->
+<div class="row justify-content-around">
+  <div class="col-sm-6">
+    <div class="container-fluid mt-4 card container" style="float: left;">
+
+      
+      <div class="mb-3">
+        <span><strong>Title:</strong> {{movie.title}}</span>
+      </div>
+      <div class="mb-3">
+        <span><strong>Overview:</strong> {{movie.overview}}</span>
+      </div>
+      <div class="mb-3">
+        <span><strong>Revenue: </strong></span> <span>${{movie.revenue}}</span>
+      </div>
+      <div class="mb-3" *ngFor="let company of productionCompany">
+        <span><strong>Production:</strong> {{company.name}}</span>
+      </div>
+      <div class="mb-3" *ngFor="let genre of genres">
+        <span><strong>Genre:</strong> {{genre.name}}</span>
+      </div>
+      <div class="mb-3">
+        <span><strong>Average Rating: </strong>{{movie.vote_average}}</span>
+        
+      </div>
+      <div class="mb-3">
+        <span><strong>Total number of Reviews: </strong> {{movie.vote_count}}</span>
+      </div>
+      
+      <div class="mb-3" *ngFor="let language of languages">
+        <span><strong>Language: </strong></span> <span><strong>{{language.name}}</strong></span>
+      </div>
+
+     
+
+      <div *ngFor='let comment of movie.comments'>
+        <div class="mb-3">
+            <div class="mb-3">
+            <span><strong>Comment: </strong></span> <span>{{comment}}</span> &nbsp;
+          </div>
+          
+      </div>
+      </div>
+    
+  </div>
+  <div class="comment">
+    <label for="comments"><strong>Comment:</strong></label>
+    <textarea [(ngModel)]="comments" type="text" placeholder="comments" name="comments" ></textarea>
+    <div><button type="submit" (click)="onSubmit()" class="btn btn-success">Submit</button></div>
+  </div>
+</div>

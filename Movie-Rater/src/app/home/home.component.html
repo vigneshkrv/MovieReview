@@ -1,0 +1,27 @@
+<div style="margin: 10px;">
+  <input (change)="changeInput()" style="width: 70%;margin-right: 5px;border-radius: 3px;border-color: cornflowerblue;height: 40px;" type="email" [(ngModel)]="searchValue">
+  <button (click)="searchMovies()" class="btn btn-primary">
+    <fa-icon class="" [icon]="faSearch"></fa-icon>
+  </button>
+</div>
+
+<div class="row justify-content-around mt-5 ">
+  <div class="col-md-3" *ngFor="let movie of movieData">
+    <div class="container-fluid mt-4 card container" style="float: left;" (click)="navigateProduct(movie.id)">
+     
+      <div class='first'>
+        <!-- <img class="img1" src={{movie.}} > -->
+      </div>
+      <div class="mb-3">
+        <span><strong>Title: {{movie.original_title}}</strong></span>
+      </div>
+      <div class="mb-3" >
+        <span><strong>Release Date: {{movie.release_date}}</strong></span>
+      </div>
+      <div>
+        <span><strong>Rating</strong></span><bar-rating [(rate)]="movie.vote_average" [max]="10" [theme]="'stars'"></bar-rating>
+        <span><strong>Budget: </strong></span>  <span><strong>{{movie.budget}}$</strong></span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="col-md-6">
+  <form (ngSubmit)="onSubmit()" #userForm = "ngForm">
+
+    <div class="container">
+      <label for="uname"><b>Title</b></label>
+      <input [(ngModel)]="movieModel.original_title" type="text" placeholder="Title for movie" name="title" required>
+  
+      <label for="psw"><b>Overview</b></label>
+      <input [(ngModel)]="movieModel.overview" type="text" placeholder="Enter Overview for the movie" name="overview" required>
+
+      <label for="psw"><b>Revenue</b></label>
+      <input [(ngModel)]="movieModel.revenue" type="text" placeholder="Enter revenue for the movie" name="revenue" required>
+
+      <label for="psw"><b>Budget</b></label>
+      <input [(ngModel)]="movieModel.budget" type="text" placeholder="Enter budget for the movie" name="budget" required>
+
+      <label for="psw"><b>Average Rating</b></label>
+      <input [(ngModel)]="movieModel.vote_average" type="text" placeholder="Enter rating for the movie" name="vote_average" required>
+
+      <label for="psw"><b>Rate Count</b></label>
+      <input [(ngModel)]="movieModel.vote_count" type="text" placeholder="Enter how many people rated" name="vote_count" required>
+      
+      <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Submit</button>
+    </div>
+  
+  </form>
+
+</div>
