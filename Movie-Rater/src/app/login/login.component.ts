@@ -24,11 +24,13 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if(this.userModel.username===this.adminCredentials.username && this.userModel.password === this.adminCredentials.password)
     {
-      this.router.navigateByUrl('admin')
+      this.router.navigate(['admin'])
+      this.movie.setUSer(false)
     }
     else if(this.userModel.username===this.userCredentials.username && this.userModel.password === this.userCredentials.password)
     {
-      this.router.navigateByUrl('home')
+      this.router.navigate(['home'])
+      this.movie.setUSer(true)
 
     }
     else{

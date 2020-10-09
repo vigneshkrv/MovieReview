@@ -1,14 +1,14 @@
-<div style="margin: 10px;">
-  <input (change)="changeInput()" style="width: 70%;margin-right: 5px;border-radius: 3px;border-color: cornflowerblue;height: 40px;" type="email" [(ngModel)]="searchValue">
+<div style="margin-left: 40%;">
+  <input (change)="changeInput()" style="width: 30%;margin-right: 5px;border-radius: 3px;border-color: cornflowerblue;height: 40px;" type="email" [(ngModel)]="searchValue">
   <button (click)="searchMovies()" class="btn btn-primary">
     <fa-icon class="" [icon]="faSearch"></fa-icon>
   </button>
-  <button (click)="createMovies()" class="btn btn-primary">
+  <button (click)="createMovies()" class="btn btn-primary" style="margin-left: 10px;">
     Create
   </button>
 </div>
 
-<div class="row justify-content-around mt-5 ">
+<div class="row mt-5 " style="margin:auto">
   <div class="col-md-3" *ngFor="let movie of movies" >
     <div *ngIf="movie!==null" class="mt-4 card container" style="float: left;" (click)="navigateProduct(movie.id)">
      
@@ -26,11 +26,11 @@
         <span><strong>Budget: </strong></span>  <span><strong>{{movie.budget}}$</strong></span>
       </div>
     </div>
-    <div *ngIf="movie!==null" class="justify-content-between">
-      <button  (click)="editMovie(movie.id)" class="btn btn-primary">
+    <div *ngIf="movie!==null" class="" style="margin-top: 20px;">
+      <button  (click)="editMovie(movie.id)" class="btn btn-primary" style="margin-right: 4%; margin-top: 20px;">
       Edit
     </button>
-    <button (click)="deleteMovie(movie)" class="btn btn-primary">
+    <button (click)="deleteMovie(movie)" class="btn btn-primary" style="margin-right: 4%; margin-top: 20px;">
       Delete
     </button>
   </div>

@@ -7,6 +7,7 @@ import movies from '../assets/SelectedMovies.json'
 })
 export class DataServiceService {
   rootURL = "http://localhost:8080/api"
+  user:boolean
   constructor(private http:HttpClient) {
     
    }
@@ -34,5 +35,9 @@ export class DataServiceService {
 
   deleteMovie(x) {
     return this.http.post(this.rootURL+"/deleteMovie",x)
+  }
+
+  setUSer(user) {
+    this.user=user
   }
 }

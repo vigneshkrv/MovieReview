@@ -36,18 +36,18 @@
      
 
       <div *ngFor='let comment of movie.comments'>
-        <div class="mb-3">
-            <div class="mb-3">
-            <span><strong>Comment: </strong></span> <span>{{comment}}</span> &nbsp;
+        <div >
+            <div  >
+            <span ><strong>Comment: </strong></span> <span>{{comment}}</span> &nbsp;
           </div>
           
       </div>
       </div>
     
   </div>
-  <div class="comment">
-    <label for="comments"><strong>Comment:</strong></label>
-    <textarea [(ngModel)]="comments" type="text" placeholder="comments" name="comments" ></textarea>
-    <div><button type="submit" (click)="onSubmit()" class="btn btn-success">Submit</button></div>
+  <div class="comment" >
+    <label for="comments" style="margin-right: 10px; margin-top: 20px;"><strong>Comment:</strong></label>
+    <textarea style="margin-top: 10px; width: 750px; height: 100px;" [(ngModel)]="comments" type="text" placeholder="comments" name="comments" ></textarea>
+    <div><button type="submit" style="margin-left:300px" (click)="onSubmit()" class="btn btn-success">Submit</button></div>
   </div>
 </div>
