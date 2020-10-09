@@ -15,8 +15,9 @@ username: admin
 Password: admin@123
 
 To Run the App: 
-    1. Start the node API from API folder using the command "npm start"
-    2. Now, Run the app from Movie-rater folder using the command "npm start" or "ng serve"
+    1. Run "npm i" to install all the dependency packages from folder "movie-rater" and "API"
+    2. Start the node API from API folder using the command "npm start"
+    3. Now, Run the app from Movie-rater folder using the command "npm start" or "ng serve"
 
 The Api provides the feature for editing, commenting, deleting and adding a new movie.
 
